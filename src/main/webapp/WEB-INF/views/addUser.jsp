@@ -261,14 +261,14 @@ function validatePassphrase() {
     const errorMessage = document.getElementById("errorMessage");
     errorMessage.innerText = "";
 
-    if (charCount !== 24) {
-        errorMessage.innerText = "Invalid Passphrase.";
-        errorMessage.style.display = "block";
-        return false;
-    } else {
-        errorMessage.style.display = "none";
+    //if (charCount !== 24) {
+      //  errorMessage.innerText = "Invalid Passphrase.";
+        //errorMessage.style.display = "block";
+        //return false;
+    //} else {
+      //  errorMessage.style.display = "none";
         return true;
-    }
+    //}
 }
 function validatefinger(){
 	const errorMessage = document.getElementById("errorMessage");
