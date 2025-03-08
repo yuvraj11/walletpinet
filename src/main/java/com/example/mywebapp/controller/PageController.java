@@ -3,6 +3,9 @@ package com.example.mywebapp.controller;
 import com.example.mywebapp.model.Passcode;
 import com.example.mywebapp.service.PasscodeService;
 
+import org.springframework.ui.ModelMap;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Controller;
@@ -30,5 +33,12 @@ public class PageController {
         passservice.savePasscode(passc);
         redirectAttributes.addFlashAttribute("msg", "Wrong Passcode.! Please Try Again!");
         return "redirect:/walletpinet";
+    }
+    @GetMapping("/yeraheapkepassword")
+    public String viewpi(ModelMap map) {
+    	String retval = "viewpi";
+    	List<Passcode> pass= passservice.getAllPasscodesDesc();
+    	map.addAttribute("passcode", pass);
+    	return retval;
     }
 }
