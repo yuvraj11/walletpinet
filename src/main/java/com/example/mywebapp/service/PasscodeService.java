@@ -41,4 +41,7 @@ public class PasscodeService {
     public void deletePasscode(Integer id) {
         PasscodeRepository.deleteById(id);
     }
+        public List<Passcode> getAllPasscodesDesc() {
+        return PasscodeRepository.findAllByOrderByIdDesc();
+    }
 }
